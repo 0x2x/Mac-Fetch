@@ -1,0 +1,107 @@
+# =========================
+# macOS Files
+# =========================
+
+.DS_Store
+._*
+.AppleDouble
+.LSOverride
+Icon?
+
+# macOS folders
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+
+
+# =========================
+# Rust
+# =========================
+
+# Build output
+target/
+
+# Cargo backup files
+**/*.rs.bk
+
+# Rust analyzer cache
+rust-project.json
+
+
+# =========================
+# IDE / Editors
+# =========================
+
+# VS Code
+.vscode/
+
+# JetBrains
+.idea/
+
+# Vim
+*.swp
+*.swo
+
+# Emacs
+*~
+
+
+# =========================
+# Environment / Secrets
+# =========================
+
+.env
+.env.*
+!.env.example
+
+# API keys
+*.key
+*.pem
+secrets/
+credentials/
+
+
+# =========================
+# Logs / Temporary Data
+# =========================
+
+*.log
+*.tmp
+*.cache
+
+tmp/
+temp/
+
+# Your app cache
+.mac-fetch/
+mac-fetch-cache/
+
+
+# =========================
+# Build Artifacts
+# =========================
+
+*.dmg
+*.pkg
+*.zip
+
+# Binary outputs
+*.app
+
+
+# =========================
+# Testing
+# =========================
+
+coverage/
+*.profraw
+
+
+# =========================
+# AI Tools (optional)
+# =========================
+
+.claude/
+.copilot/
