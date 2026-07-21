@@ -1,3 +1,5 @@
+use crate::collectors::{self, cpu::{self, cpu}, gpu::{self, gpu}, hostname::{self, hostname}, kernel::{self, kernel}, memory::{self, memory}, os_version::{self, os_version}, resolution::{self, resolution}, sysctl};
+
 pub struct OS {
     pub os_name: String,
     pub host_name: String,
@@ -69,18 +71,19 @@ impl OS {
         
     }
     pub fn os_details() -> OS { // Generate an object
+        //
         let value_os_name = String::new();
-        let value_host_name= String::new();
-
-        let value_kernel = String::new();
+        let value_host_name= hostname();
+        let value_kernel = kernel();
+        // TODO: 
         let value_uptime = String::new();
         let value_packages = String::new();
         let value_shell = String::new();
-        let value_resolution = String::new();
+        let value_resolution = resolution();
         let value_terminal = String::new();
-        let value_cpu = String::new();
-        let value_gpu = String::new();
-        let value_memory = String::new();
+        let value_cpu = cpu();
+        let value_gpu = gpu();
+        let value_memory = memory();
         let value_disk = String::new();
 
         let value_spotify_name = String::new();

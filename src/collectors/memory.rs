@@ -1,4 +1,4 @@
-use create::macos::runner;
+use crate::macos::runner;
 
 pub fn memory() -> String {
     let bytes = runner::execute_command(

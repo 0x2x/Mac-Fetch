@@ -1,8 +1,8 @@
 use crate::macos::runner;
 
-pub fn os_version() -> String {
+pub fn ostype() -> String {
     runner::execute_command(
         "sysctl",
-        &["-productVersion"]
+        &["-n", "kern.ostype"]
     )
 }

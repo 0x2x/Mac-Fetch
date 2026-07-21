@@ -1,8 +1,8 @@
 use crate::macos::runner;
 
-pub fn os_version() -> String {
+pub fn gpu() -> String {
     runner::execute_command(
         "sysctl",
-        &["-productVersion"]
+        &["-a", "|", "grep", "-i", "gpu"]
     )
 }

@@ -1,6 +1,6 @@
-use create::macos::runner;
+use crate::macos::runner;
 
-pub fn cpu() -> String {
+pub fn hostname() -> String {
     runner::execute_command(
         "hostname",
         &[]

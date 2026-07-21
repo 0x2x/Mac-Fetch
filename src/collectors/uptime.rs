@@ -1,8 +1,8 @@
 use crate::macos::runner;
 
-pub fn os_version() -> String {
+pub fn uptime() -> String {
     runner::execute_command(
         "sysctl",
-        &["-productVersion"]
+        &["-n", "machdep.cpu.brand_string"]
     )
 }
