@@ -43,7 +43,7 @@ fn main() {
     display::detail_line(&"WM", &"test_AppleMacbook"); // OS
     display::detail_line(&"WM Theme", &"test_AppleMacbook"); // OS
     display::detail_line(&"Icons", &"test_AppleMacbook"); // OS
-    display::detail_line(&"Terminal", &"test_AppleMacbook"); // OS
+    display::detail_line(&"Terminal", &os_details.terminal); // OS
     display::detail_line(&"CPU", &os_details.cpu); // TODO: Fix Type
     display::detail_line(&"GPU", &os_details.gpu); // OS
     display::detail_line(&"Memory", &os_details.memory); // OS

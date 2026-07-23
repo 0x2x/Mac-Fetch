@@ -1,11 +1,5 @@
 use crate::collectors::{
-    cpu::cpu,
-    gpu::gpu,
-    hostname::hostname,
-    kernel::kernel,
-    memory::memory,
-    resolution::resolution,
-    uptime::uptime
+    cpu::cpu, get_terminal::get_terminal, gpu::gpu, hostname::hostname, kernel::kernel, memory::memory, resolution::resolution, uptime::uptime
 };
 
 pub struct OS {
@@ -88,7 +82,7 @@ impl OS {
         let value_packages = String::new();
         let value_shell = String::new();
         let value_resolution = resolution();
-        let value_terminal = String::new();
+        let value_terminal = get_terminal();
         let value_cpu = cpu();
         let value_gpu = gpu();
         let value_memory = memory();

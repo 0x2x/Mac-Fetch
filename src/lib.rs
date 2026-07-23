@@ -35,4 +35,5 @@ pub mod collectors {
     pub mod resolution;
     pub mod sysctl;
     pub mod uptime;
+    pub mod get_terminal;
 }
