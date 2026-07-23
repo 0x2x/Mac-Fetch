@@ -16,8 +16,8 @@ fn split_key_value() {
 use mac_fetch::collectors::sysctl::{self, get_sysctl_result};
 use mac_fetch::display::output;
 
-#[test] 
-fn test_sysctl_init() {
+#[test]
+fn test_sysctl_get() {
     let result = get_sysctl_result();
-    output::debug(result);
+    output::debug(result.get("user.cs_path"));
 }

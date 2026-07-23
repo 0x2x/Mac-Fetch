@@ -1,4 +1,12 @@
-use crate::collectors::{self, cpu::{self, cpu}, gpu::{self, gpu}, hostname::{self, hostname}, kernel::{self, kernel}, memory::{self, memory}, os_version::{self, os_version}, resolution::{self, resolution}, sysctl};
+use crate::collectors::{
+    cpu::cpu,
+    gpu::gpu,
+    hostname::hostname,
+    kernel::kernel,
+    memory::memory,
+    resolution::resolution,
+    uptime::uptime
+};
 
 pub struct OS {
     pub os_name: String,
@@ -76,7 +84,7 @@ impl OS {
         let value_host_name= hostname();
         let value_kernel = kernel();
         // TODO: 
-        let value_uptime = String::new();
+        let value_uptime = uptime();
         let value_packages = String::new();
         let value_shell = String::new();
         let value_resolution = resolution();

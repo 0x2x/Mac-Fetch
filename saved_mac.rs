@@ -1,5 +1,5 @@
 use mac_fetch::display::display;
-use mac_fetch::sys::{system};
+use mac_fetch::sys::{self, system};
 
 fn main() {
 

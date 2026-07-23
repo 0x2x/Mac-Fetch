@@ -1,12 +1,9 @@
-use crate::macos::runner;
+use crate::collectors::sysctl::get_sysctl_result;
 
-pub fn memory() -> String {
-    let bytes = runner::execute_command(
-        "sysctl",
-        &["-n", "hw.memsize"]
-    ); // Execute Command to grab Memory
-
+pub fn memory() -> String {    
+    let bytes: String = get_sysctl_result().get("hw.memsize")
+        .cloned()
+        .unwrap();
     let gb = bytes.parse::<u64>().unwrap() / 1024 /1024 /1024; // Convert MB to GB
-
-    format!("{} GB", gb)
+    format!("{} GB / {} MB", gb, bytes)
 }

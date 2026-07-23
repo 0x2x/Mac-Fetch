@@ -34,4 +34,5 @@ pub mod collectors {
     pub mod os_type; // Display: Darwin
     pub mod resolution;
     pub mod sysctl;
+    pub mod uptime;
 }
