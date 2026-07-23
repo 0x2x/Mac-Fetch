@@ -5,17 +5,7 @@ pub mod display { // Include Graphical Tui Information
 
 pub mod sys { // Include System Attributes
     pub mod system;
-}
-
-pub mod spotify { // Spotify
-    pub mod token; // Spotifys refresh/Active tokens
-    pub mod spotify; // Spotify functionality
-}
-
-pub mod apple_music {
-    pub mod osascripts { // Complete
-        // pub mod osascript;
-    }
+    pub mod cache;
 }
 
 
@@ -24,7 +14,7 @@ pub mod macos { // MacOS
 }
 
 
-pub mod collectors {
+pub mod collectors { // System Gathering 
     pub mod cpu;
     pub mod hostname;
     pub mod kernel;
@@ -36,4 +26,22 @@ pub mod collectors {
     pub mod sysctl;
     pub mod uptime;
     pub mod get_terminal;
+}
+
+// External APIS
+pub mod spotify { // Spotify
+    pub mod token; // Spotifys refresh/Active tokens
+    pub mod spotify; // Spotify functionality
+}
+
+pub mod apple_music {
+    pub mod osascripts { // Complete
+        // pub mod osascript;
+    }
+}
+
+pub mod api {
+    pub mod github {
+        pub mod github;
+    }
 }

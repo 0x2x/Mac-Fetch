@@ -1,3 +1,5 @@
+use crate::api::github;
+
 pub fn apple_logo() {
     print!("Imagine a Apple")
 }
@@ -62,10 +64,19 @@ pub fn color_array() {
 
 
 // third party
-pub fn github_line(username: &str) {
+pub async fn github_line(username: &str) {
     // What are some stuff to show?
-    
-    println!("https://github.com/{}", username);
+    match github::github::get_profile(&username).await {
+        Ok(user) => {
+            // Count earned follows from previous cache TODO: Implement
+            let previous_count = 3; // TODO: Grab from cache
+            let follower_count = user.followers;
+            print!("\tGithub: {}\n\tEarned Followers: {}", &username, follower_count - previous_count)
+        }
+        Err(error) => {
+            print!("\tGithub: Error\n\tError: {}", error)
+        }
+    }
 }
 
 pub fn spotify_line(track: &str, artist: &str) {

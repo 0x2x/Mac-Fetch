@@ -1,8 +1,9 @@
 use mac_fetch::display::display;
 use mac_fetch::sys::{system};
 
-fn main() {
-
+#[tokio::main]
+async fn main() {
+    
     // Hard-Coded to test formatting and views
     let node_npm_exist: bool = true;
     let git_version: bool = false;
@@ -12,7 +13,7 @@ fn main() {
     let use_apple_music: bool = false;
     let use_spotify: bool = true;
     let use_lastfm: bool = false;
-    let use_github: bool = false;
+    let use_github: bool = true;
 
     let os_details = system::OS::os_details();
     // Display details - Right Panel TODO: Fill with lines
@@ -24,7 +25,7 @@ fn main() {
         display::apple_line("test", "test");
     }
     if use_github {
-        display::github_line("0x2x");
+        display::github_line("0x2x").await;
     }
     if use_lastfm {
         display::lastfm("test", "artist");
